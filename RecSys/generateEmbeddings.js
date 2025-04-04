@@ -1,6 +1,6 @@
 import { pipeline } from '@xenova/transformers';
 
-const generateEmbeddings = async (text) => {
+export const generateEmbeddings = async (text) => {
     const pipe = await pipeline('feature-extraction', 'Supabase/gte-small');
     const output = await pipe(text, {
         pooling: "mean", 
